@@ -89,6 +89,62 @@ Update the task tracker ticket with:
 - Git branch and commit info
 - Merge request link
 - Change status (e.g., New → Resolved)
+- **API 變更說明**（for 前端 Web/App Engineer）
+
+#### API 變更說明格式
+
+在 ticket 完成後，必須新增 API 變更說明，讓前端工程師了解 API 異動：
+
+```markdown
+## API 變更說明（for 前端 Web/App Engineer）
+
+### 新增 API
+
+| Method | Endpoint | 說明 |
+|--------|----------|------|
+| POST | `/api/xxx` | API 說明 |
+
+**Request Body**：（如有）
+\`\`\`json
+{
+  "field": "value"
+}
+\`\`\`
+
+**Response**：（如有）
+\`\`\`json
+{
+  "field": "value"
+}
+\`\`\`
+
+---
+
+### 修改 API
+
+| API | 變更說明 |
+|-----|----------|
+| `GET /api/xxx/{id}` | 新增/修改欄位說明 |
+
+**新增/修改欄位**：
+
+| 欄位 | 型別 | 說明 |
+|------|------|------|
+| `fieldName` | Type | 欄位說明 |
+
+---
+
+### 刪除 API
+
+| Method | Endpoint | 說明 |
+|--------|----------|------|
+| （如有刪除才填寫） | | |
+```
+
+**注意事項**：
+- 若無任何 API 變更，仍需標註「無」
+- Request/Response 範例使用 code block 包裹
+- 欄位說明要清楚標明型別和用途
 
 ## Key Rules
 
